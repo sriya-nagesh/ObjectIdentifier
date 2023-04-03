@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<style>
+		body {
+			  background-color: #1F2833;
+			  text-align: center;
+		      margin: 110px 350px;
+		      font-family: monospace;
+		      font-size: 16pt;
+		  }
+		h1   {color: #66FCF1;  
+			font-family: monospace;
+		}
+		h2   {color: white;  
+			font-family: monospace;
+			font-size: 14pt;
+		}
+		form {background-color: #C5C6C7;
+			align-self: center;
+			color: white;
+			font-family: monospace;
+			font-size: 15pt;
+			width: 800px;
+			height: 300px;
+			margin: 20px 20px;
+			border-radius: 30px;
+		}
+		input[type=submit]{
+			background-color: black;
+			width: 300px;
+			height: 50px;
+			border:none;
+			font-family: monospace;
+			color: #66FCF1;
+		}
+
+		input[type=submit]:hover{
+			background-color: black;
+			opacity: 0.6;
+		}
+
+        .container {
+        	top:50%;
+        	left:50%;
+        	transform:translate(-50%,-50%);
+        	position: absolute
+        }
+        .upload{
+        	font-size:20px;
+        	background: gray;
+        	border-radius: 50px;
+        	width: 350px;
+        	outline: none;
+        	margin: 20px;
+        }
+
+        ::-webkit-file-upload-button{
+        	color: #66FCF1;
+        	background: black;
+        	padding: 20px;
+        	border-radius: 50px;
+        	border:none;
+        	outline: none;
+        	font-family: monospace;
+        }
+
+        ::-webkit-file-upload-button:hover{
+        	background: black;
+        	opacity: 0.6;
+        }
+        div{
+        	margin-top: 50px;
+        	align-self: center;
+        }
+
+    </style>
+
+	<title>Object Identifier</title>
+</head>
+<body>
+<h1>Object Identifier</h1>
+<h2>Please upload a picture you wish to identify!</h2>
+<form action="imageUpload/imageprocess" method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+	<div class="container">
+		<input class="upload" id="image" type="file" name="image" required> 
+		<input class="upload" type="submit" value="Submit">
+	</div>
+</form>
+</body>
+</html>
